@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-require('./sidePane.styl');
 
-class Hello extends Component {
-  
-  componentDidMount() {
-    console.log('hello');
-  }
+//Components
+import RaisedButton from 'material-ui/lib/raised-button';
+import AppBar from 'material-ui/lib/app-bar';
 
-  render() {
-    return (
-      <div className="side-pane">  
-        <div className="primary">
-          <button className="item">
-            <i className="" />
-          </button> 
-        </div>
-      </div>
-    );
-  }
-}
+require('./app.styl');
 
-render(<Hello/>, document.getElementById('app'));
+const App = () => (
+  <div className="app">
+    <AppBar title="Kurupira" iconClassNameRight="muidocs-icon-navigation-expand-more" />
+  </div>
+);
+
+render(<App />, document.getElementById('app'));
