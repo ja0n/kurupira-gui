@@ -12,7 +12,7 @@ var config = {
     extensions: ["", ".js", ".css", ".styl"]
   },
   entry: [
-    'webpack-dev-server/client?http://localhost:3001',
+    'webpack-dev-server/client?http://localhost:8080',
     //'webpack/hot/dev-server',
     './src/app.js'
   ],
