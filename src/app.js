@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './reducers';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 //Components
-import AppBar from 'material-ui/lib/app-bar';
-import FloatingToolBox from './components/FloatingToolBox/';
-import Canvas from './components/Canvas';
+import App from './components/App';
+let store = createStore(rootReducer);
 
-require('./app.styl');
-
-const App = () => (
-  <div className="app">
-    <AppBar title="Kurupira" iconClassNameRight="muidocs-icon-navigation-expand-more" />
-    <FloatingToolBox />
-    <Canvas />
-   
-  </div>
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
 );
-
-render(<App />, document.getElementById('app'));

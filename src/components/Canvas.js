@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import Paper from 'material-ui/lib/paper';
 import DirectorMode from '../../DirectorMode';
 
@@ -16,9 +18,11 @@ class Canvas extends React.Component {
   }
 
   componentDidMount() {
+    const { scenes } = this.props;
+    console.log(this.props.scenes);
     let tv = this.directorInstance = new DirectorMode(this.refs.canvas);
 
-    let data = require('json!../model.json');
+    let data = scenes.data[scenes.selectedIndex];
 
     tv.runGame = function() {
       localStorage.stage = JSON.stringify(data);
@@ -48,4 +52,10 @@ class Canvas extends React.Component {
   }
 }
 
-export default Canvas;
+function mapStateToProps(state) {
+  return {
+    scenes: state.scenes,
+  };
+}
+
+export default connect(mapStateToProps)(Canvas);
