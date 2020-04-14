@@ -19,10 +19,13 @@ var config = {
   output: {
     path: path.join(__dirname, '/build/'),
     filename: 'app.js'
-    //publicPath: 'http://localhost:3001/assets/'
   },
   devServer: {
-    contentBase: path.join(__dirname, "public"),
+    contentBase: [
+      path.resolve(__dirname, 'public'),
+      path.resolve(__dirname, 'node_modules')
+    ],
+    publicPath:  '/',
     compress: true,
     port: 8080
   },

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Paper from 'material-ui/lib/paper';
+import FlatButton from 'material-ui/lib/flat-button';
 import DirectorMode from '../../DirectorMode';
 
 const style = {
@@ -25,8 +26,8 @@ class Canvas extends React.Component {
     let data = scenes.data[scenes.selectedIndex];
 
     tv.runGame = function() {
-      localStorage.stage = JSON.stringify(data);
-      window.open('/public/runner.html', '_blank', 'height=650,width=850');
+      localStorage.setItem('stage', JSON.stringify(data));
+      window.open('/runner.html', '_blank', 'height=650,width=850');
     };
 
     //  tv.runCycle();
@@ -47,6 +48,7 @@ class Canvas extends React.Component {
           no support
         </canvas>
 
+        <FlatButton label="Run" secondary={true} onClick={() => this.directorInstance.runGame()} />
       </Paper>
     );
   }
