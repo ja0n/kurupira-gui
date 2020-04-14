@@ -21,6 +21,11 @@ var config = {
     filename: 'app.js'
     //publicPath: 'http://localhost:3001/assets/'
   },
+  devServer: {
+    contentBase: path.join(__dirname, "public"),
+    compress: true,
+    port: 8080
+  },
   module: {
     loaders: [
       {
