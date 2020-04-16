@@ -26,7 +26,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "kurupira-runner": "git+https://github.com/ja0n/kurupira-runner-html5.git",
+    "kurupira-runner": "git+https://github.com/ja0n/kurupira-runner-html5.git#dist",
     "material-ui": "^0.14.4",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
