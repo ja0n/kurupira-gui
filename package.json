@@ -45,6 +45,6 @@
     "redbox-react": "^1.2.2",
     "redux-devtools": "^3.2.0",
     "style-loader": "^0.13.0",
-    "stylus-loader": "^1.5.1"
+    "stylus-loader": "^1.6.1"
   }
 }
